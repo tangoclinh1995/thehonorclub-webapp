@@ -21,8 +21,9 @@ angular.module(
     
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
   // Default state
   $urlRouterProvider.otherwise('/login');
+  $ionicConfigProvider.scrolling.jsScrolling(false);
 
 });
