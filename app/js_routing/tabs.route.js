@@ -31,16 +31,6 @@ angular.module('thehonorclub')
     }
   })
 
-  .state('tabs.cards', {
-    url: '/cards',
-    views: {
-      'tabContent': {
-        templateUrl: 'templates/cardpage.html',
-        controller: 'CardsController'
-      }
-    }
-  })
-
   .state('tabs.matchings', {
     url: '/matchings',
     views: {
