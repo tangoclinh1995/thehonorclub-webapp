@@ -7,8 +7,19 @@ angular.module('thehonorclub')
   .state('tabs', {
     url: '/tabs',
     templateUrl: 'templates/tabs.html',
-    abstract:true
+    controller: "tabsController",
+    abstract: true
   })
+
+  .state('tabs.userprofile', {
+    url: '/userprofile',
+    views: {
+      'tabContent': {
+        templateUrl: 'templates/profilepage.html',
+        controller: 'userProfileController'
+      }
+    }
+  })  
 
   .state('tabs.dashboard', {
     url: '/dashboard',
