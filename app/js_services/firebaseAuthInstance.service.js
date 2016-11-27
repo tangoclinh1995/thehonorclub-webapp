@@ -1,13 +1,14 @@
 angular.module("thehonorclub")
 .factory("$firebaseAuthInstance", function(firebaseKey) {
 	var factory = {};
-	// console.log(firebaseKey);
+
 	factory.auth = JSON.parse(localStorage.getItem("firebase:authUser:"+firebaseKey+":[DEFAULT]"));
-	// console.log(factory.auth);
-	factory.$getAuth = () => {
+
+	factory.$getAuth = function() {
 		return factory.auth;
 	};
-	factory.$setAuth = (auth) => {
+
+	factory.$setAuth = function(auth) {
 		if (factory.auth != undefined) {
 			console.log(factory.auth);
 		}
@@ -15,7 +16,13 @@ angular.module("thehonorclub")
 			localStorage.setItem("firebase:authUser:"+firebaseKey+":[DEFAULT]",JSON.stringify(auth));
 			factory.auth = auth;
 		}
+
 	};
+
+  factory.$cleanAuth = function() {
+		localStorage.removeItem("firebase:authUser:"+firebaseKey+":[DEFAULT]");
+		factory.auth = undefined;
+  }
 
 	return factory;
 });
