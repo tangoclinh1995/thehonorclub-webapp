@@ -31,6 +31,26 @@ angular.module('thehonorclub')
     }
   })
 
+  .state('tabs.listevent', {
+    url: '/listevent',
+    views: {
+      'tabContent': {
+        templateUrl: 'templates/eventlist.html',
+        controller: 'eventListController'
+      }
+    }
+  })
+
+  .state('tabs.eventinfo', {
+    url: '/eventInfo/:eventUid',
+    views: {
+      'tabContent': {
+        templateUrl: 'templates/eventInfo.html',
+        controller: 'EventInfoCtrl'
+      }
+    }
+  })    
+
   .state('tabs.matchings', {
     url: '/matchings',
     views: {
