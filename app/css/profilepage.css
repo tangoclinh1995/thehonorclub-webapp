@@ -4,8 +4,10 @@ img#imgProfilePicture {
   margin-left: auto;
   margin-right: auto;
   border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-ion-nav-view .pane {
+/*ion-nav-view .pane {
   overflow-y: auto;
-}
+}*/
