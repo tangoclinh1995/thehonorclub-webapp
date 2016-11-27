@@ -10,11 +10,8 @@
     "angular-ui-router": "0.2.13",
     "angular-animate": "1.5.3",
     "angular-sanitize": "1.5.3",
-    "ionic-ion-tinder-cards": "ionic-contrib-tinder-cards#*",
-    "ng-cordova-oauth": "^0.2.10",
+    "ionic-ion-tinder-cards": "Bixev/ionic-ion-tinder-cards",
     "moment": "^2.16.0",
-    "Ionicons": "ionicons#^2.0.1",
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "Ionicons": "ionicons#^2.0.1"
   }
 }
