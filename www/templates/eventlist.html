@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+      <button class="btn btn-primary btn-lg" style="display:block; margin: auto">
+        I don't know what event to join
+      </button>
+
+      <br>
+
+      <div class="panel panel-info" ng-repeat="(eventUid, eventProps) in event" ng-if="eventAvailForUser(eventUid)">
+        <div class="panel-heading">
+          {{ eventProps.name }}
+        </div>
+        <div class="panel-body">
+          <span class="glyphicon glyphicon-calendar"></span>
+          &nbsp;
+          {{ unixTimestampToString(eventProps.timestamp_begin) }} - {{ unixTimestampToString(eventProps.timestamp_end) }}
+          <br> 
+          <span class="glyphicon glyphicon-user"></span>
+          &nbsp;
+          {{eventProps.min_member_per_team}} - {{eventProps.max_member_per_team}} people/team
+          <br>
+          <span class="glyphicon glyphicon-list"></span>
+          &nbsp;
+          {{eventProps.description}}
+          <br><br>
+          <a href="#/tabs/eventInfo/{{eventUid}}">More Details</a>
+          
+          <br><br>
+
+          <a class="btn btn-danger" href="#/teamCreation/{{eventUid}}">Be a Leader</a>
+          &nbsp;&nbsp;
+          <a class="btn btn-primary">Be a Member</a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
