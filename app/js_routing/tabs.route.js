@@ -51,12 +51,12 @@ angular.module('thehonorclub')
     }
   })    
 
-  .state('tabs.matchings', {
-    url: '/matchings',
+  .state('tabs.matchtoteam', {
+    url: '/matchtoteam/:eventUid?',
     views: {
       'tabContent': {
-        templateUrl: 'templates/matchings.html',
-        controller: 'matchingsController'
+        templateUrl: 'templates/matchToTeam.html',
+        controller: 'matchToTeamController'
       }
     }
   })
