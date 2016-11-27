@@ -1,6 +1,6 @@
 
 {
- "name": "thehonorclub_mobileapp",
+ "name": "thehonorclub_webapp",
  "app_id": "",
  "gulpStartupTasks": [
    "sass",
