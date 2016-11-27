@@ -1,5 +1,5 @@
 angular.module('thehonorclub')
-.controller('loginController', ['$scope', '$state', '$stateParams', '$firebaseAuthInstance', function ($scope, $state, $stateParams, $firebaseAuthInstance) {
+.controller('loginController', ['$scope', '$state', '$firebaseAuthInstance', function ($scope, $state, $firebaseAuthInstance) {
   var dbRefUserInfo = firebase.database().ref("user_info");
   var signInUser;
 
@@ -8,20 +8,6 @@ angular.module('thehonorclub')
 	if (currentUser != undefined) {
     $state.go('tabs.dashboard');
 	}
-
-	// Sign out
-	$scope.logout = function() {
-		firebase.auth().signOut().then(function() {
-		  // Sign-out successful.
-		  console.log("signed out");
-			console.log(firebase.auth());
-			localStorage.removeItem(currentUser.uid);
-			$state.go('evmtRequest');
-		}, function(error) {
-		  // An error happened.
-	  	console.error(error);
-		});
-	};
 
 	$scope.requestEvent = function() {
 		$state.go('evmtRequest');
