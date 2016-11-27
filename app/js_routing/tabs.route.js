@@ -13,7 +13,7 @@ angular.module('thehonorclub')
   .state('tabs.dashboard', {
     url: '/dashboard',
     views: {
-      'tab1': {
+      'tabContent': {
         templateUrl: 'templates/dashboard.html',
         controller: 'dashboardController'
       }
@@ -23,7 +23,7 @@ angular.module('thehonorclub')
   .state('tabs.cards', {
     url: '/cards',
     views: {
-      'tab2': {
+      'tabContent': {
         templateUrl: 'templates/cardpage.html',
         controller: 'CardsController'
       }
@@ -33,7 +33,7 @@ angular.module('thehonorclub')
   .state('tabs.matchings', {
     url: '/matchings',
     views: {
-      'tab3': {
+      'tabContent': {
         templateUrl: 'templates/matchings.html',
         controller: 'matchingsController'
       }

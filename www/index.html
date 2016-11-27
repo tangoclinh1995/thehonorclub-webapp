@@ -5,22 +5,29 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
-
     <!-- CSS & SCSS bundle -->
     <link href="bundle/style.bundle.css" rel="stylesheet">
     <link href="bundle/scss_style.bundle.css" rel="stylesheet">
 
     <!-- Ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    
     <!-- Jquery --> 
     <script src="lib/jquery/dist/jquery.min.js"></script>     
 
     <!-- Bootstrap --> 
-    <link href="lib/bootstrap/dist/css/bootstrap.min.css" ref="stylesheet"> 
-    <link href="lib/bootstrap/dist/css/bootstrap-theme.min.css" ref="stylesheet"> 
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>     
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    >
+
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>         
 
     <!-- Firebase & AngularFire -->
     <script src="lib/firebase/firebase.js"></script>
@@ -66,13 +73,6 @@
   </head>
 
   <body ng-app="thehonorclub">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also

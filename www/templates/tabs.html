@@ -1,13 +1,36 @@
-<ion-view title="Teamder" id="tabs">
-  <ion-tabs class="tabs-stable tabs-icon-top" id="tabs-tabs1">
-    <ion-tab title="Dashboard" icon="ion-ios-list" href="#/tabs/dashboard" id="tabs-tab1">
-      <ion-nav-view name="tab1"></ion-nav-view>
-    </ion-tab>
-    <ion-tab title="Find Your Team" icon="ion-fireball" href="#/tabs/cards" id="tabs-tab2">
-      <ion-nav-view name="tab2"></ion-nav-view>
-    </ion-tab>
-    <ion-tab title="Matchings" icon="ion-heart" href="#/tabs/matchings" id="tabs-tab3">
-      <ion-nav-view name="tab3"></ion-nav-view>
-    </ion-tab>
-  </ion-tabs>
-</ion-view>
+<div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbarCollapsibleRegion"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Teamder</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarCollapsibleRegion">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#/tabs/dashboard">
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#/tabs/cards">Cards</a></li>
+          <li><a href="#/tabs/matchings">Matching</a></li>
+        </ul>
+      </div>        
+
+    </div>
+
+  </nav>
+
+  <ion-nav-view ui-view name="tabContent"></div>  
+</div>
