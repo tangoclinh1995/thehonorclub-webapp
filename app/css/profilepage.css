@@ -1,6 +1,13 @@
 img#imgProfilePicture {
   max-width: 200px;
   height: auto;
-
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/*ion-nav-view .pane {
+  overflow-y: auto;
+}*/
