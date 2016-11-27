@@ -1,68 +1,69 @@
-<ion-view title="Dashboard">
-  <ion-content padding="true" class="has-header">
-    <div id="dashboard-button-bar1" class="button-bar"></div>
-    <h1 id="dashboard-heading1" style="color:#000000;">Your Events</h1>
-    
-    <div class="list card">
-      <ion-list>
-        <!--list events that user is leader of -->
-        <div ng-repeat="(l_team, value) in userInfo.leader_of" >
-          <ion-item
-            class="item-stable"
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h2>Teams you lead</h2>
+
+      <br>
+
+      <!-- List of team -->
+      <div class="panel panel-info" ng-repeat="(l_team, value) in userInfo.leader_of">
+        <div class="panel-heading">
+          <span
+            class="glyphicon"
+            ng-class="isTeamShown(teamInfo[l_team]) ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'"
             ng-click="toggleEvent(teamInfo[l_team])"
-            ng-class="{active: isTeamShown(teamInfo[l_team])}"
-          >
-            <i class="icon" ng-class="isTeamShown(teamInfo[l_team]) ? 'ion-minus' : 'ion-plus'"></i>
-            &nbsp;
-            {{eventInfo[teamInfo[l_team].event_uid].name}}
-            <span class="item-note">Leader</span>
-            <i class="icon ion-android-star"></i>
-          </ion-item>
-            
-          <!-- list of members -->
-          <ion-item
-            class="item-accordion"
-            ng-repeat="(m_id, value) in teamInfo[l_team].members_uid"
-            ng-show="isTeamShown(teamInfo[l_team])"
-          >
-            {{allUserInfo[m_id].name}}
-          </ion-item>
-        </div>
+          ></span>
+          <strong>{{ teamInfo[l_team].name }}</strong>
 
-        <br>
-        <br>
-        <br>
-
-        <!--list events that user is member of -->
-        <div ng-repeat="(m_team, value) in userInfo.member_of" >
-          <ion-item
-            class="item-stable"
-            ng-click="toggleEvent(teamInfo[m_team])"
-            ng-class="{active: isTeamShown(teamInfo[m_team])}"
-          >
-            <i class="icon" ng-class="isTeamShown(teamInfo[m_team]) ? 'ion-minus' : 'ion-plus'"></i>
-            &nbsp;
-            {{eventInfo[teamInfo[m_team].event_uid].name}}
-            <span class="item-note">Member</span>
-            <i class="icon ion-android-contacts"></i>
-          </ion-item>
-            
-          <!-- list of members -->
-          <ion-item
-            class="item-accordion"
-            ng-repeat="(m_id, value) in teamInfo[m_team].members_uid"
-            ng-show="isTeamShown(teamInfo[m_team])"
-          >
-            {{allUserInfo[m_id].name}}
-          </ion-item>
+          &nbsp;&nbsp;          
+          <button class="btn btn-sm btn-primary">
+            <span class="glyphicon glyphicon-zoom-in"></span>
+            Recruit more
+          </button>
+          
+          <br>
+          
+          at {{ eventInfo[teamInfo[l_team].event_uid].name }}                    
         </div>
-      </ion-list>
+        <div class="panel-body" ng-if="isTeamShown(teamInfo[l_team])">
+          <!-- List of member -->
+
+          <p ng-repeat="(m_id, value) in teamInfo[l_team].members_uid">
+            {{ allUserInfo[m_id].name }}
+          </p>
+
+        </div>
+      </div>
+
     </div>
-    
-    <br>
 
-    <!-- Button at bottom leads user to event management page -->
-    <button id="dashboard-button13" class="button button-positive  button-block" ng-href="{{}}">Browse Other Events</button>
+    <div class="col-md-6 col-sm-12">
+      <h2>Teams you join</h2>
 
-  </ion-content>
-</ion-view>
+      <br>
+
+      <!-- List of team -->
+      <div class="panel panel-info" ng-repeat="(l_team, value) in userInfo.member_of">
+        <div class="panel-heading">
+          <span
+            class="glyphicon"
+            ng-class="isTeamShown(teamInfo[l_team]) ? 'glyphicon-chevron-up' : 'glyphicon-chevron-down'"
+            ng-click="toggleEvent(teamInfo[l_team])"
+          ></span>
+          <strong>{{ teamInfo[l_team].name }}</strong> <br>
+          at {{ eventInfo[teamInfo[l_team].event_uid].name }}          
+        </div>
+        <div class="panel-body" ng-if="isTeamShown(teamInfo[l_team])">
+          <!-- List of member -->
+
+          <p ng-repeat="(m_id, value) in teamInfo[l_team].members_uid">
+            {{ allUserInfo[m_id].name }}
+          </p>
+
+        </div>
+      </div>      
+
+    </div>    
+
+  </div>
+</div>
