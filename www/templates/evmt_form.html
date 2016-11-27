@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <h1> Request New Event </h1>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+      <div class="form-group">
+        <label for="inputEventName">Event name</label>
+        <input type="text" class="form-control" id="inputEventName" ng-model="name" required>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputStartDate">Start date (YYYY-MM-DD)</label>
+            <input type="text" class="form-control" id="inputStartDate" ng-model="startDate" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputStartTime">Start time (hh:mm)</label>
+            <input type="text" class="form-control" id="inputStartTime" ng-model="startTime" required>
+          </div>
+        </div>        
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputEndDate">End date (YYYY-MM-DD)</label>
+            <input type="text" class="form-control" id="inputEndDate" ng-model="endDate" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputEndTime">End time (hh:mm)</label>
+            <input type="text" class="form-control" id="inputEndTime" ng-model="endTime" required>
+          </div>          
+        </div>        
+      </div>
+
+      <div class="form-group">
+        <label for="inputEventDetail">Event detail</label>
+        <textarea type="text" class="form-control" id="inputEventDetail" ng-model="description"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputMinSize">Minimum team size</label>
+            <input type="number" class="form-control" id="inputMinSize" ng-model="minSize" min="1" required>
+          </div>     
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputMaxSize">Maximum team size</label>
+            <input type="number" class="form-control" id="inputMaxSize" ng-model="maxSize" min="{{minSize}}" required>
+          </div>          
+        </div>        
+      </div>
+      
+      <div class="form-group">
+        <label for="inputEmail">Email of contact person</label>
+        <input type="email" class="form-control" id="inputEmail" ng-model="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="inputLocation">Location</label>
+        <input type="text" class="form-control" id="inputLocation" ng-model="location">
+      </div>                 
+
+      <button class="btn btn-primary" ng-click="addEvent()">Send Request</button>
+    </div>
+  </div>
+
+</div>

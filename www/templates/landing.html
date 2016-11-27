@@ -3,20 +3,15 @@
   style="background: url(img/logo.png) no-repeat center;background-size:cover;"
 >
 
-  <button
-    class="btn btn-primary btnOnLandingPage"
-    style="margin-top: 70%; display: block; margin-left: auto; margin-right: auto; font-size: 1.5em; padding: 10px"
-    ng-click="login()"
-  >
-    Sign In with Facebook
-  </button>
-
-  <button
-    class="btn btn-primary"
-    style="margin-top: 10px; display: block; margin-left: auto; margin-right: auto; font-size: 1.5em; padding: 10px"
-    ng-click="requestEvent()"
-  >
-    Request Event
-  </button>  
+  <div style="position: fixed; bottom: 20%; text-align: center; width: 100%" >
+    <button class="btn btn-primary" style="font-size: 1.5em; padding: 10px 30px;" ng-click="login()">
+      Sign In with Facebook
+    </button>
+    <br>
+    <br>
+    <button class="btn btn-primary" style="font-size: 1.5em; padding: 10px 30px" ng-click="requestEvent()">
+      Request Event
+    </button>
+  </div>
 
 </div>
