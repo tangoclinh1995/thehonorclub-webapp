@@ -1,72 +1,75 @@
-<ion-view view-title="Profile">  
-  <ion-content>  
-    <div class="list">      
+<ion-view view-title="Profile">
+  <ion-content>
+    <div class="container-fluid">    
       <!-- Profile picture -->
-      <div class="item item-image">        
-        <img id="imgProfilePicture" ng-src={{photoURL}}>
-        <br><br>
-      </div>
-
-      <!-- Input name -->
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Name</span>
-        <input type="text" name="name" ng-model="profile.name" placeholder="John Smith">
-      </label>
-
-      <!-- Input bio -->
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Brief bio</span>
-        <textarea name="bio" ng-model="profile.bio" placeholder="Bio"></textarea>
-      </label>
-
-      <!-- Add skills -->
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Skills</span>
-        <input type="text" name="skills" ng-model="profile.newSkill" placeholder="e.g. Ionic, AngularJS, React,...">
-      </label>
-
-      <div class="item">
-        <button class="button button-positive" ng-click="addSkill(profile.newSkill)">
-          Add Skill
-        </button>      
-      </div>
-
-      <!-- Skill list -->
-      <div class="item" style="white-space: normal">
-        <div class="textchip" ng-repeat="sk in skills | orderBy:sk">
-          {{ sk }}
-          <span class="textchip-closebutton" ng-click="removeSkill(sk)">&times;</span>
-        </div>
-      </div> 
-
-      <!-- Add position -->
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Desired positions</span>
-        <input type="text" name="position" ng-model="profile.newPosition" placeholder="e.g. Project manager, Designer, Developer,...">
-      </label>
-
-      <div class="item">
-        <button class="button button-positive" ng-click="addPosition(profile.newPosition)">
-          Add Position
-        </button>
-      </div>
-
-      <!-- Position list -->
-      <div class="item" style="white-space: normal">
-        <div class="textchip" ng-repeat="pos in desiredPositions | orderBy:pos">
-          {{ pos }}
-          <span class="textchip-closebutton" ng-click="removePosition(pos)">&times;</span>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">  
+          <img class="img-responsive" id="imgProfilePicture" ng-src={{photoURL}}>
         </div>
       </div>
 
-      <br>
-      <br>
 
-      <!-- Save -->
-      <button class="button button-positive" ng-click="saveProfile()" ng-disabled="isSavingProfile" style="margin-left: 15px">
-        Save Profile
-      </button>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <form>
+            <!-- Input name -->
+            <div class="form-group">
+              <label for="profileName">Name</label>
+              <input type="text" id="profileName" class="form-control" name="name" ng-model="profile.name" placeholder="John Smith">
+            </div>
+
+            <!-- Input bio -->
+            <div class="form-group">
+              <label for="bio">Brief bio</label>
+              <textarea id="bio" name="bio" class="form-control" ng-model="profile.bio" placeholder="Bio"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="skills">Skills</label>
+              <input type="text" id="skills" class="form-control" name="skills" ng-model="profile.newSkill" placeholder="e.g. Ionic, AngularJS, React,...">
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" ng-click="addSkill(profile.newSkill)">
+                Add Skill
+              </button>      
+            </div>
+
+            <!-- Skill list -->
+            <div class="form-gropp" style="white-space: normal">
+              <div class="textchip" ng-repeat="sk in skills | orderBy:sk">
+                {{ sk }}
+                <span class="textchip-closebutton" ng-click="removeSkill(sk)">&times;</span>
+              </div>
+            </div> 
+
+            <div class="form-group">
+              <label for="position">Desired positions</label>
+              <input type="text" id="position" class="form-control" name="position" ng-model="profile.newPosition" placeholder="e.g. Project manager, Designer, Developer,...">
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" ng-click="addPosition(profile.newPosition)">
+                Add Position
+              </button>
+            </div>
+
+            <!-- Position list -->
+            <div class="form-group" style="white-space: normal">
+              <div class="textchip" ng-repeat="pos in desiredPositions | orderBy:pos">
+                {{ pos }}
+                <span class="textchip-closebutton" ng-click="removePosition(pos)">&times;</span>
+              </div>
+            </div>
+
+            <!-- Save -->
+            <button class="btn btn-primary" ng-click="saveProfile()" ng-disabled="isSavingProfile">
+              Save Profile
+            </button>
+          </form>
+        </div> 
+      </div>
 
     </div>
   </ion-content>
-</ion-view>  
+</ion-view>

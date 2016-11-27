@@ -1,6 +1,13 @@
-img#imgProfilePicture {
+input[type="text"] {
+  padding-top: 6px !important;
+  padding-left: 12px !important;
+}
+
+#imgProfilePicture {
   max-width: 200px;
   height: auto;
 
   border-radius: 100px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
