@@ -1,48 +1,25 @@
-<ion-view view-title="eventInfo">
-	<ion-content ng-controller="eventInfoCtrl">
-  	<h1 id = "name"> {{event.name}} </h1>
-  	<table style="width:100%" border="0">
-    	<tr>
-      	<td rowspan="3" width="63%">
-        	<div id="description"> {{event.description}} </div>
-        </td>
-        <td width="37%" align="center">
-        	<div id="from"> From: </div>
-          <div id="startDate"> {{event.start_date}} </div>
-          <div id="startTime"> {{event.start_time}} </div>
-        </td>
-      </tr>
-      <tr>
-      	<td width="37%" align="center">
-        	<div id="to"> To: </div>
-          <div id="endDate"> {{event.end_date}} </div>
-          <div id="endTime"> {{event.end_time}} </div>
-        </td>
-      </tr>
-      <tr>
-        <td width="37%" align="center">
-          <div id="teamSize"> Team Size:</div>
-          <div id="teamValue"> {{event.min_team_size}} - {{event.max_team_size}} people </div>
-        </td>
-      </tr>
-      <tr>
-      	<td align="center" colspan="2">
-        	<div id="contactEmail"> {{event.contact_email}} </div>
-        </td>
-      </tr>
-      <tr>
-        <td align="center" colspan="2">
-        	<div id="location"> {{event.location}} </div>
-    		</td>
-      </tr>
-      <tr>
-        <td colspan="2"" align="center"> 
-          <i class="icon ion-social-facebook" ng-click="shareFacebook()"></i>
-          <i class="icon ion-social-instagram" ng-click="shareInstagram()"></i>
-          <i class="icon ion-social-whatsapp" ng-click="shareWhatsApp()"></i>
-          <i class="icon ion-social-twitter" ng-click="shareTwitter()"></i>
-        </td>
-    	</tr>
-  	</table>
-	</ion-content>
-</ion-view>
+<div class="container-fluid">
+  <div class="page-header">
+    <h1> {{ event.name }}</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <div id="description"> {{ event.description }} </div>
+    </div>
+    <div class="col-md-4 col-xs-12">
+      <div id="from"><strong>From:</strong></div>
+      <div id="startDate"> {{event.start_date}} </div>
+      <div id="startTime"> {{event.start_time}} </div>
+
+      <div id="to"><strong>To:</strong></div>
+      <div id="endDate"> {{event.end_date}} </div>
+      <div id="endTime"> {{event.end_time}} </div>
+
+      <div id="teamSize"><strong>Team Size:</strong> {{event.min_team_size}} - {{event.max_team_size}} people </div>
+
+      <div id="contactEmail"> <strong>Contact: </strong>{{event.contact_email}} </div>
+      <div id="location"> <strong>Location: </strong>{{event.location}} </div>
+    </div>
+  </div>
+</div>
