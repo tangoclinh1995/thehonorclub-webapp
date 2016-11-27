@@ -14,11 +14,9 @@ angular.module("thehonorclub")
       return;
     }
 
-    if (!snapshot.child("max_member_per_team").exists()) {
-      return;
-    }
-
-    maxMemberPerTeam = snapshot.child("max_member_per_team").val();
+    $scope.event = snapshot.val();
+    
+    maxMemberPerTeam = $scope.event["max_member_per_team"]; 
   });
 
   $scope.isSavingTeam = false;
