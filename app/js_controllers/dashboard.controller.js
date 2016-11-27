@@ -14,9 +14,9 @@ angular.module("thehonorclub")
   $scope.userInfo = $firebaseObject(databaseRef.child("user_info").child(currentUser.uid));
   $scope.allUserInfo = $firebaseObject(databaseRef.child("user_info"));
   $scope.eventInfo = $firebaseObject(databaseRef.child("event"));
-  $scope.teamInfo = $firebaseObject(databaseRef.child("team"));   
+  $scope.teamInfo = $firebaseObject(databaseRef.child("team"));
 
-  console.log($scope);
+  console.log($scope.userInfo, $scope.allUserInfo, $scope.eventInfo, $scope.teamInfo);
 
   $scope.toggleEvent = function(team) {
     if ($scope.isTeamShown(team)) {

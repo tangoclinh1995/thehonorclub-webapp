@@ -1,9 +1,9 @@
 <ion-view title="Dashboard">
-  <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header container text-center">
     <div id="dashboard-button-bar1" class="button-bar"></div>
     <h1 id="dashboard-heading1" style="color:#000000;">Your Events</h1>
-    
-    <div class="list card">
+
+    <div class="list content-responsive">
       <ion-list>
         <!--list events that user is leader of -->
         <div ng-repeat="(l_team, value) in userInfo.leader_of" >
@@ -18,7 +18,7 @@
             <span class="item-note">Leader</span>
             <i class="icon ion-android-star"></i>
           </ion-item>
-            
+
           <!-- list of members -->
           <ion-item
             class="item-accordion"
@@ -46,7 +46,7 @@
             <span class="item-note">Member</span>
             <i class="icon ion-android-contacts"></i>
           </ion-item>
-            
+
           <!-- list of members -->
           <ion-item
             class="item-accordion"
@@ -58,11 +58,11 @@
         </div>
       </ion-list>
     </div>
-    
+
     <br>
 
     <!-- Button at bottom leads user to event management page -->
-    <button id="dashboard-button13" class="button button-positive  button-block" ng-href="{{}}">Browse Other Events</button>
+    <button id="dashboard-button13" class="button button-positive button-block content-responsive" ng-href="{{}}">Browse Other Events</button>
 
   </ion-content>
 </ion-view>
