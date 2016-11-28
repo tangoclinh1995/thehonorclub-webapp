@@ -1,8 +1,8 @@
 angular.module('thehonorclub')
 .controller(
   'matchToTeamController',
-  ["$scope", "$stateParams", "TDCardDelegate", "$firebaseAuthInstance", "$matchingRequestService", "$recommendationService", "$firebaseObject",
-  function($scope, $stateParams, TDCardDelegate, $firebaseAuthInstance, $matchingRequestService, $recommendationService, $firebaseObject)
+  ["$scope", "$stateParams", "TDCardDelegate", "$firebaseAuthInstance", "$matchingRequestService", "$recommendationService", "$firebaseObject", "$ionicLoading",
+  function($scope, $stateParams, TDCardDelegate, $firebaseAuthInstance, $matchingRequestService, $recommendationService, $firebaseObject, $ionicLoading)
 {
   var databaseRef = firebase.database().ref();
 
