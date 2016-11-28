@@ -74,14 +74,19 @@ angular.module('thehonorclub')
 
       // A match is found
       if (matchingResult == $matchingRequestService.REQUEST_MATCH) {
-        var matchingMsg = "It's a match: You <-> " + teamInfo[matchObj.teamUid].name + "!";
+        $matchingRequestService
+        .acceptMatch(matchObj.teamUid, currentUser.uid, matchObj.eventUid)
+        .then(function() {
+              var matchingMsg = "It's a match: You <-> " + teamInfo[matchObj.teamUid].name + "!";
 
-        $ionicLoading.show({
-          template: matchingMsg,
-          duration: 1000
+              $ionicLoading.show({
+                template: matchingMsg,
+                duration: 1000
+              });
+
         });
-
-      }
+        
+      }      
 
     });
 
