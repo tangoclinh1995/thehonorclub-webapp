@@ -71,6 +71,18 @@ angular.module('thehonorclub')
     .joinTeam(currentUser.uid, matchObj.teamUid, matchObj.eventUid)
     .then(function() {
       console.log("Sent to ", matchObj.teamUid);
+
+      // A match is found
+      if (matchingResult == $matchingRequestService.REQUEST_MATCH) {
+        var matchingMsg = "It's a match: You <-> " + teamInfo[matchObj.teamUid].name + "!";
+
+        $ionicLoading.show({
+          template: matchingMsg,
+          duration: 1000
+        });
+
+      }
+
     });
 
   };
