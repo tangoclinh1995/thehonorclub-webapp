@@ -56,6 +56,13 @@
         <div class="panel-body" ng-if="isTeamShown(teamInfo[l_team])">
           <!-- List of member -->
 
+          <p>
+            <strong>Leader: </strong> &nbsp; 
+            {{ allUserInfo[teamInfo[l_team].leader_uid].name }}
+          </p>
+
+          <p><strong>Members</strong></p>
+
           <p ng-repeat="(m_id, value) in teamInfo[l_team].members_uid">
             {{ allUserInfo[m_id].name }}
           </p>
