@@ -61,4 +61,14 @@ angular.module('thehonorclub')
     }
   })
 
+  .state('tabs.matchtoteammember', {
+    url: '/matchtoteammember/:teamUid',
+    views: {
+      'tabContent': {
+        templateUrl: 'templates/matchToTeamMember.html',
+        controller: 'matchToTeamMemberController'
+      }
+    }
+  })  
+
 });
