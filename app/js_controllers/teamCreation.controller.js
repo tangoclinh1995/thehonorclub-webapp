@@ -133,7 +133,7 @@ angular.module("thehonorclub")
         
         // Move to dashboard after new team is created
         // This can be changed later
-        $state.go("tabs.dashboard");
+        $state.go("tabs.matchtoteammember", {teamUid: newTeamRef.key});
 
       });
 
