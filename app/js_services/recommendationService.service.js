@@ -90,10 +90,10 @@ angular.module("thehonorclub")
       var result = {};
 
       for (uid in mapUserInfo) {
-        if (mapUserHaveTeam[uid]) {
+        if (typeof mapUserHaveTeam[uid] == "undefined") {
           result[uid] = mapUserInfo[uid];
         }
-
+        
       }
 
       defer.resolve(result);
