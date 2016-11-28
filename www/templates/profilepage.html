@@ -54,8 +54,8 @@
       <!-- Position list -->
       <div class="list-group">
         <button class="list-group-item" ng-repeat="pos in desiredPositions | orderBy:pos">
-          {{ pos }}
           <span class="glyphicon glyphicon-remove" ng-click="removePosition(pos)">&nbsp;</span>
+          {{ pos }}
         </button>
       </div>
 
