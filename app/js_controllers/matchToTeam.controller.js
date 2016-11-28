@@ -69,7 +69,7 @@ angular.module('thehonorclub')
 
     $matchingRequestService
     .joinTeam(currentUser.uid, matchObj.teamUid, matchObj.eventUid)
-    .then(function() {
+    .then(function(matchingResult) {
       console.log("Sent to ", matchObj.teamUid);
 
       // A match is found
@@ -85,7 +85,7 @@ angular.module('thehonorclub')
               });
 
         });
-        
+
       }      
 
     });
