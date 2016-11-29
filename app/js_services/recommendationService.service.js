@@ -29,21 +29,17 @@ angular.module("thehonorclub")
       "value"
     )
     .then(function(snapshot) {
-      // If eventUid is not provided, then just result the result immediately     
-      if (!eventUidProvided) {
-        defer.resolve(snapshot.val());
-        return;
-      }
-
       var result = {};    
       snapshot.forEach(function(team) {
+        console.log(userUid, team.child("leader_uid").val());
+
         if (eventUidProvided && team.child("event_uid").val() != eventUid) {
           return;
-        }
+        }       
 
         if (team.child("leader_uid").val() == userUid || team.child("members_uid").hasChild(userUid)) {
           return;
-        } 
+        }
 
         result[team.key] = team.val();
       });
