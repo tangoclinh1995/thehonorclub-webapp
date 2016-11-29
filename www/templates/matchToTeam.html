@@ -14,18 +14,25 @@
     >
       <div class="image">
         <div class="no-text">NOPE</div>
-        <img ng-src="{{card.image}}">
+        <div class="image-wrapper">
+          <img ng-src="{{card.image}}">
+        </div>
         <div class="yes-text">LIKE</div>
         <div class="card-desc">
           {{card.teamName}}     {{card.matchingScore}}%          
         </div>
 
-        <div ng-if="!currentEventUid">
+        <div ng-if="!currentEventUid" style="margin-bottom: 10px">
           at <strong>{{ eventInfo[card.eventUid].name }}</strong>
         </div>
 
-        <span class="badge" ng-repeat="sk in card.mostMatchedSkills">{{sk}}</span>
-        <span class="badge" ng-repeat="pos in card.mostMatchedPositions">{{pos}}</span>       
+        <div style="margin-bottom: 10px">
+          <span class="chip-text" ng-repeat="sk in card.mostMatchedSkills">{{sk}}</span>
+        </div>
+
+        <div>
+          <span class="chip-text" ng-repeat="pos in card.mostMatchedPositions">{{pos}}</span>
+        </div>       
         
       </div>
     </td-card>
