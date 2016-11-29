@@ -31,8 +31,6 @@ angular.module("thehonorclub")
     .then(function(snapshot) {
       var result = {};    
       snapshot.forEach(function(team) {
-        console.log(userUid, team.child("leader_uid").val());
-
         if (eventUidProvided && team.child("event_uid").val() != eventUid) {
           return;
         }       
